@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Project — One‑Page Site</title>
+  <meta name="description" content="Short description of what this site is about." />
+  <meta property="og:title" content="Your Project — One‑Page Site" />
+  <meta property="og:description" content="Short description of what this site is about." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>✨</text></svg>">
+  <style>
+    :root{
+      --bg: #0b1020;        /* page background */
+      --panel: #0f172a;     /* cards/nav */
+      --text: #e5e7eb;      /* main text */
+      --muted: #9ca3af;     /* secondary */
+      --accent: #60a5fa;    /* links/buttons */
+      --ring: rgba(96,165,250,.35);
+      --radius: 16px;
+      --maxw: 980px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f8fafc; --panel:#ffffff; --text:#0f172a; --muted:#475569; --accent:#2563eb; --ring:rgba(37,99,235,.25);}  
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial; background:var(--bg); color:var(--text)}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+
+    /* Header / Nav */
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(10px); background:color-mix(in oklab, var(--panel) 82%, transparent); border-bottom:1px solid color-mix(in oklab, var(--text) 12%, transparent)}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700}
+    .brand .logo{width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg, var(--accent), color-mix(in oklab, var(--accent) 65%, black)); display:grid; place-items:center; color:white; font-size:18px}
+    nav a{color:var(--text); text-decoration:none; padding:8px 10px; border-radius:10px}
+    nav a:hover{background:color-mix(in oklab, var(--text) 8%, transparent)}
+    nav a.active{background:color-mix(in oklab, var(--accent) 20%, transparent); color:var(--accent)}
+
+    /* Hero */
+    .hero{padding:72px 0 36px}
+    .hero h1{font-size:clamp(28px, 4vw, 48px); line-height:1.1; margin:0 0 10px}
+    .hero p{color:var(--muted); margin:0}
+    .cta{display:flex; gap:12px; margin-top:22px}
+    .btn{display:inline-block; padding:12px 16px; border-radius:12px; border:1px solid color-mix(in oklab, var(--accent) 40%, transparent); background:color-mix(in oklab, var(--accent) 20%, transparent); color:var(--accent); font-weight:600; text-decoration:none}
+    .btn.secondary{background:transparent; border-color:color-mix(in oklab, var(--text) 12%, transparent); color:var(--text)}
+
+    /* Sections */
+    section{scroll-margin-top:90px; padding:36px 0}
+    .card{background:var(--panel); border:1px solid color-mix(in oklab, var(--text) 10%, transparent); border-radius:var(--radius); padding:20px; box-shadow:0 1px 0 color-mix(in oklab, black 10%, transparent)}
+    h2{font-size:clamp(22px, 3vw, 32px); margin:0 0 12px}
+    .grid{display:grid; gap:16px}
+    @media (min-width:820px){.grid{grid-template-columns:repeat(12,1fr)} .col-4{grid-column:span 4} .col-6{grid-column:span 6} .col-12{grid-column:span 12}}
+
+    /* Footer */
+    footer{padding:28px 0 64px; color:var(--muted)}
+    .small{font-size:14px}
+
+    /* Utilities */
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+    .skip-link{position:fixed; left:12px; top:12px; transform:translateY(-130%); transition:transform .2s; background:var(--panel); color:var(--text); padding:8px 10px; border-radius:10px; border:1px solid color-mix(in oklab, var(--text) 10%, transparent)}
+    .skip-link:focus{transform:none}
+    .to-top{position:fixed; right:16px; bottom:16px; padding:10px 12px; border-radius:999px; background:var(--panel); border:1px solid color-mix(in oklab, var(--text) 12%, transparent); text-decoration:none}
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header>
+    <div class="wrap nav">
+      <div class="brand"><span class="logo">★</span> <span>Your Project</span></div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="hero">
+      <h1>All the info in one clean page</h1>
+      <p>Use clearly labeled sections and a sticky nav for quick jumps.</p>
+      <div class="cta">
+        <a class="btn" href="#features">Explore features</a>
+        <a class="btn secondary" href="#contact">Get in touch</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="card">
+        <h2>About</h2>
+        <p>Explain what this site is and who it’s for. Keep it short, link to longer docs if you have them.</p>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="grid">
+        <div class="card col-6">
+          <h3>Feature A</h3>
+          <p>Short, scannable description. Optional link or callout.</p>
+        </div>
+        <div class="card col-6">
+          <h3>Feature B</h3>
+          <p>Short, scannable description. Optional link or callout.</p>
+        </div>
+        <div class="card col-4">
+          <h3>Feature C</h3>
+          <p>Another item. Keep language simple.</p>
+        </div>
+        <div class="card col-4">
+          <h3>Feature D</h3>
+          <p>Another item. Use the grid to lay out content.</p>
+        </div>
+        <div class="card col-4">
+          <h3>Feature E</h3>
+          <p>Another item. Add as many as needed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="card">
+        <h2>FAQ</h2>
+        <details>
+          <summary>How is this structured?</summary>
+          <p>One HTML file, with a sticky header that links to anchored sections (<code>#about</code>, <code>#features</code>, etc.).</p>
+        </details>
+        <details>
+          <summary>Is it responsive?</summary>
+          <p>Yes. A simple CSS grid and fluid type keeps it readable on phones and desktops.</p>
+        </details>
+        <details>
+          <summary>Can I add analytics or a form?</summary>
+          <p>Yep. Drop your script just before <code>&lt;/body&gt;</code>, and embed a form provider or a bare <code>&lt;form&gt;</code>.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="card">
+        <h2>Contact</h2>
+        <form name="contact" method="post" data-netlify="true">
+          <label class="sr-only" for="name">Name</label>
+          <input id="name" name="name" placeholder="Your name" required style="width:100%;padding:12px;border-radius:12px;border:1px solid color-mix(in oklab, var(--text) 12%, transparent);background:transparent;color:var(--text);margin-bottom:10px">
+
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="Email" required style="width:100%;padding:12px;border-radius:12px;border:1px solid color-mix(in oklab, var(--text) 12%, transparent);background:transparent;color:var(--text);margin-bottom:10px">
+
+          <label class="sr-only" for="msg">Message</label>
+          <textarea id="msg" name="message" rows="5" placeholder="How can we help?" style="width:100%;padding:12px;border-radius:12px;border:1px solid color-mix(in oklab, var(--text) 12%, transparent);background:transparent;color:var(--text);"></textarea>
+
+          <div style="display:flex;gap:12px;margin-top:12px">
+            <button class="btn" type="submit">Send</button>
+            <a class="btn secondary" href="#top">Email us instead</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap small">
+      <div>© <span id="year"></span> Your Project. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <a class="to-top" href="#top" aria-label="Back to top">↑</a>
+
+  <script>
+    // Active link highlighting
+    const links = [...document.querySelectorAll('nav a')];
+    const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        const id = '#' + e.target.id;
+        const link = links.find(a => a.getAttribute('href') === id);
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          link?.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-50% 0px -40% 0px', threshold: 0.01 });
+    sections.forEach(s => s && io.observe(s));
+
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
